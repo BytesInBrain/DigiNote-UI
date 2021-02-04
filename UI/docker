@@ -1,0 +1,42 @@
+#!/bin/bash 
+
+
+#dokerizing mongodb
+# docker run \
+# -it --rm -d \
+# -v mongodb:/data/db \
+# -v mongodb_config:/data/configdb \
+# -p 27017:27017 \
+# --network mongodb \
+# --name mongodb \
+# mongo
+
+# #dockerizing Vue app
+# docker run \
+# -it --rm -d \
+# --name devdashvue \
+# --mount type=bind,source=/home/kgost/Desktop/Test/DevDash/devdash,target=/home/src \
+# -w /home/src \
+# -p 8080:8080 \
+# node
+
+# docker exec devdashvue npm install
+
+
+#dockerizing API 
+docker run \
+-it --rm -d \
+--mount type=bind,source=${PWD}/,target=/home/src \
+-w /home/src \
+--name uiserve \
+--network mongodb \
+-p 8000:5001 \
+node
+
+# docker exec uiserve npm install
+
+docker exec -it uiserve bash
+
+docker stop uiserve
+
+

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-language" content="en" />
+    <meta http-equiv="content-script-type" content="text/javascript" />
+    <meta http-equiv="content-style-type" content="text/css" />
+    <meta
+      name="description"
+      content="This is the online markdown editor with live preview."
+    />
+    <script src="js/axios.js"></script>
+    <script src="js/jquery.js" crossorigin="anonymous"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/hnm.css" />
+    <title>DigiNote</title>
+  </head>
+
+  <body>
+    <div id="header">
+      <div class="logo">
+        <svg
+          id="logo"
+          enable-background="new 0 0 512.004 512.004"
+          height="52"
+          viewBox="0 0 512.004 512.004"
+          width="52"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="XMLID_1997_">
+            <path
+              id="XMLID_2132_"
+              d="m70.874 315.856c-17.468-35.14-27.249-76.959-26.617-114.15 1.836-108.054 90.228-193.423 198.283-191.679 106.268 1.716 191.885 88.396 191.885 195.073l32.896 107.106c1.963 6.391-2.816 12.858-9.501 12.858h-44.938v55.217c0 31.878-25.842 57.72-57.72 57.72h-66.054l-18.333 64h-202l16.063-66.615c9.702-40.236 4.46-82.467-13.964-119.53z"
+              fill="#ffe6c0"
+            />
+            <g id="XMLID_2274_">
+              <circle
+                id="XMLID_2285_"
+                clip-rule="evenodd"
+                cx="237.647"
+                cy="204.942"
+                fill="#fff"
+                fill-rule="evenodd"
+                r="120"
+              />
+              <circle
+                id="XMLID_2277_"
+                clip-rule="evenodd"
+                cx="237.647"
+                cy="204.942"
+                fill="#91def5"
+                fill-rule="evenodd"
+                r="72.756"
+              />
+              <g id="XMLID_263_">
+                <path
+                  id="XMLID_264_"
+                  d="m476.88 309.271-32.46-105.689c-.387-53.632-21.292-104.147-58.962-142.396-37.984-38.565-88.683-60.284-142.757-61.157-38.444-.638-76.05 9.368-108.741 28.886-4.742 2.831-6.291 8.97-3.459 13.712s8.971 6.291 13.712 3.459c29.495-17.61 63.455-26.615 98.165-26.061 100.381 1.622 182.047 84.645 182.047 185.075 0 .995.148 1.985.441 2.936l32.871 107.028h-44.854c-5.523 0-10 4.478-10 10v55.217c0 26.313-21.407 47.721-47.72 47.721h-76.375c-23.776 0-46.128-9.259-62.94-26.071-3.905-3.904-10.237-3.904-14.143 0-3.905 3.905-3.905 10.237 0 14.143 19.897 19.897 46.131 31.153 74.149 31.888l-14.692 51.287c-1.521 5.31 1.55 10.847 6.859 12.367.92.264 1.847.39 2.759.39 4.349 0 8.351-2.86 9.608-7.249l16.258-56.754h58.516c37.341 0 67.72-30.379 67.72-67.721v-45.217h34.938c6.392 0 12.237-2.948 16.036-8.089 3.799-5.143 4.901-11.595 3.024-17.705z"
+                />
+                <path
+                  id="XMLID_275_"
+                  d="m54.255 201.876c.587-34.547 10.642-68.02 29.076-96.799 2.979-4.65 1.624-10.835-3.026-13.814-4.65-2.978-10.835-1.625-13.814 3.026-20.437 31.904-31.583 68.989-32.232 107.247-.66 38.791 9.422 82.081 27.661 118.771 17.534 35.274 22.221 75.311 13.197 112.735l-16.063 66.615c-1.295 5.368 2.008 10.771 7.377 12.065.788.189 1.576.28 2.353.28 4.513 0 8.608-3.077 9.713-7.658l16.063-66.615c10.124-41.985 4.893-86.849-14.73-126.325-16.86-33.914-26.182-73.836-25.575-109.528z"
+                />
+                <path
+                  id="XMLID_276_"
+                  d="m110.607 57.971c-3.809-4-10.139-4.154-14.138-.345-4 3.809-4.154 10.139-.345 14.138l.01.01c1.964 2.063 4.597 3.101 7.235 3.101 2.478 0 4.96-.917 6.897-2.761 4.001-3.809 4.151-10.144.341-14.143z"
+                />
+                <path
+                  id="XMLID_277_"
+                  d="m367.647 204.942c0-13.268-1.953-26.163-5.802-38.543 1.157-.752 2.181-1.75 2.973-2.989 2.974-4.654 1.612-10.837-3.042-13.812l-11.789-7.533c-2.601-1.662-5.824-2.029-8.733-.996-2.909 1.034-5.177 3.353-6.146 6.284l-4.503 13.622c-1.733 5.244 1.112 10.9 6.355 12.634 1.042.344 2.1.508 3.141.508 1.044 0 2.07-.165 3.044-.478 2.99 10.07 4.503 20.54 4.503 31.303 0 60.654-49.346 110-110 110s-110-49.346-110-110 49.346-110 110-110c15.693 0 30.844 3.232 45.032 9.608 5.038 2.263 10.957.015 13.22-5.023s.015-10.957-5.023-13.22c-16.782-7.541-34.691-11.365-53.229-11.365-71.682 0-130 58.318-130 130s58.318 130 130 130 129.999-58.318 129.999-130z"
+                />
+                <path
+                  id="XMLID_1203_"
+                  d="m154.891 204.942c0 45.632 37.125 82.756 82.756 82.756s82.756-37.125 82.756-82.756-37.125-82.756-82.756-82.756-82.756 37.124-82.756 82.756zm145.513 0c0 34.604-28.152 62.756-62.756 62.756s-62.756-28.152-62.756-62.756 28.152-62.756 62.756-62.756 62.756 28.152 62.756 62.756z"
+                />
+                <path
+                  id="XMLID_1204_"
+                  d="m227.648 169.207v35.735c0 5.523 4.477 10 10 10h17.614c5.523 0 10-4.477 10-10s-4.477-10-10-10h-7.614v-25.735c0-5.523-4.477-10-10-10s-10 4.477-10 10z"
+                />
+              </g>
+            </g>
+          </g>
+        </svg>
+        <h1><a class="logot" href="/">DigiNote</a></h1>
+      </div>
+    </div>
+    <div class="options">
+      <div class="myInput">
+        <input
+          type="text"
+          class="searchbar"
+          onkeyup="searchFunction()"
+          placeholder="Search....."
+          title="Type in a name"
+        />
+      </div>
+      <button id="addbtn">Add Notebook</button>
+    </div>
+    <div class="container">
+      <div class="card-container">
+        <!-- <div class="card">
+          <h1 class="nbtitle">Programming</h1>
+          <p class="nbcretime">xyztime</p>
+          <p class="nbdesc">Description</p>
+          <div class="nbtagsC">
+            <div class="tags-list">
+              <span class="nbtags">taksjdfbshkfbsdkhfgs</span>
+              <span class="nbtags">tags</span>
+              <span class="nbtags">tags</span>
+              <span class="nbtags">tags</span>
+            </div>
+          </div>
+        </div> -->
+      </div>
+      <!-- MODALS -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form class="addnb-form" action="#">
+            <input type="text" name="title" id="ftitle" placeholder="Title" />
+            <textarea
+              name="tags"
+              id="ftags"
+              placeholder="tags"
+              cols="30"
+              rows="7"
+            ></textarea>
+            <textarea
+              name="tags"
+              id="fdesc"
+              placeholder="description"
+              cols="30"
+              rows="7"
+            ></textarea>
+            <button class="nbsubmit" type="submit" style="margin-top: 15px">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Edit Modal  -->
+      <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form class="addnb-form" action="#">
+            <input type="text" name="title" id="uftitle" placeholder="Title" />
+            <textarea
+              name="tags"
+              id="uftags"
+              placeholder="tags"
+              cols="30"
+              rows="7"
+            ></textarea>
+            <textarea
+              name="tags"
+              id="ufdesc"
+              placeholder="description"
+              cols="30"
+              rows="7"
+            ></textarea>
+            <button class="nbsubmit" type="submit" style="margin-top: 15px">
+              Update
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="js/hnm.js"></script>
+  </body>
+</html>

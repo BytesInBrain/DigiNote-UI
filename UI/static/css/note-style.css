@@ -1,0 +1,389 @@
+html, body {
+  position: relative;
+  color: #333;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  font-family: 'Ubuntu',sans-serif;
+  font-size: 1em;
+  line-height: 1.5em;
+  background-color: #f1f3de;
+}
+button {
+  background-color: #decdc3;
+  border: none;
+  color: #1a1a2e;
+  width: 100px;
+  height: 40px;
+  font-size: 14px;
+  /* padding: 15px 32px; */
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 10px;
+  outline: none;
+}
+
+button:hover {
+  background-color: #e8ded2;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: 1em;
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+.logot{
+  font-family: 'Gloria Hallelujah',cursive;
+  font-size:large;
+  color: #f8f1f1 !important;
+}
+p {
+  margin: 1em;
+}
+
+a:link,
+a:visited,
+a:hover a:active {
+  color:#f6f5f5;
+  text-decoration: none;
+}
+.nav-item-left{
+  margin-top:5px;
+  margin-right:20px;
+  width:100px;
+  height:35px;
+  text-align: center;
+  line-height: 28px;
+  align-self: center;
+  border:2px solid #f6f5f5;
+  border-radius:10px;
+}
+.nav-item-left:hover{
+  background-color: #373a40;
+;
+}
+img {
+  border: none;
+}
+
+#header {
+  background-color:#1c2b2d;
+  display:flex;
+  justify-content: space-between;
+}
+#header svg{
+  width:35px;
+  height:35px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  align-content: center;
+  justify-content: center;
+  height:50px;
+  width:150px;
+}
+.logo h1{
+  padding-left:9px;
+  padding-top:7px;
+}
+#header h1 a {
+  color: #212121;
+  font-size: 1.5em;
+}
+body{
+  display: grid;
+  grid-template-columns:250px auto;
+  grid-template-rows: 50px 75px auto;
+  height:100vh !important;
+
+}
+.options{
+  display:flex;
+  align-items: center;
+}
+.options button{
+  margin-left:5px;
+  margin-right:5px;
+}
+#header{
+grid-column-start:1;
+grid-row-start:1;
+grid-row-end:2;
+grid-column-end:3;
+}
+.list{
+  grid-column-start:1;
+  grid-row-start:3;
+  grid-row-end:4;
+  grid-column-end:2;
+  overflow-y: scroll;
+}
+/* width */
+.list::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+/* .list::-webkit-scrollbar-track {
+} */
+
+/* Handle */
+.list::-webkit-scrollbar-thumb {
+  border-radius:8px;
+  background: #555;
+}
+
+/* Handle on hover */
+.list::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+#container {
+  /* height: auto !important; */
+  /* height: 100%;
+  width: 960px; */
+   grid-column-start:2;
+   grid-row-start:3;
+   grid-row-end:4;
+   grid-column-end:3;
+  background-color: #fff;
+  border-radius: 10px;
+  /* display:grid;
+  grid-template-columns:740px 740px;
+  grid-template-rows:auto 20px; */
+  display:flex;
+}
+
+#container .section {
+  width:100%;
+  height:100%;
+}
+#edit{
+     /* grid-column-start:1;
+     grid-row-start:1;
+     grid-row-end:3;
+     grid-column-end:2;  */
+     border: 1px solid #ddd;
+     border-radius: 3px;
+     resize: none;
+     width:730px;
+     height:100%;
+     max-height:738px;
+   box-sizing: border-box;
+   overflow: hidden;
+}
+.textopt{
+  width:100%;
+  height:25px;
+  background-color:#ebebeb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.optlogo{
+  margin-left: 8px;
+  margin-right:8px;
+  margin-top:3px;
+  max-width:20px;
+  max-height: 20px;
+}
+.preview {
+     /* grid-column-start:2;
+     grid-row-start:1;
+     grid-row-end:3;
+     grid-column-end:3; */
+     border: 1px solid #ddd;
+     border-radius: 3px;
+     width:730px;
+     height:100%;
+     max-height:738px;
+     display: block;
+     overflow-y:scroll;
+     position: relative;
+    }
+
+.output{
+  padding:15px;
+  padding-bottom: 0px;
+}
+.preview::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+/* .preview::-webkit-scrollbar-track {} */
+
+/* Handle */
+.preview::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #555;
+}
+
+/* Handle on hover */
+.preview::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+#leftColumn {
+  float: left;
+  width: 700px;
+}
+
+#rightColumn {
+  width: 240px;
+  float: right;
+}
+
+.tmarkdown {
+  padding: 15px;
+  margin: 0;
+   width: 100%;
+   height: 97% !important;
+   box-sizing: border-box;
+  overflow-y:scroll !important;
+  font-size: 15px;
+  border: none;
+/*  border: 2px solid #D1D1BC;*/
+  outline: none;
+  resize:none;
+}
+.tmarkdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+/* Track */
+/* .tmarkdown::-webkit-scrollbar-track {} */
+
+/* Handle */
+.tmarkdown::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #555;
+}
+
+/* Handle on hover */
+.tmarkdown::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li {
+  border: 1px solid #ddd;
+  margin-top: -1px;
+  /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  height:50px;
+}
+.editLogo{
+  position:absolute;
+  float:right;
+  left:200px;
+  margin-top:15px;
+  margin-right:5px;
+}
+#myUL li:hover:not(.header) {
+  background-color: #eee;
+}
+.notedesc{
+  margin: 0;
+  font-size:12px;
+}
+.note{
+  display: flex;
+  flex-direction: column;
+}
+
+/* Searchbarr */
+
+.myInput{
+  width:230px;
+  height:27px;
+  margin-bottom:15px;
+  border:1px solid #212121;
+  background-color: #ddd;
+  border-radius:20px;
+  position: relative;
+  top:25px;
+}
+.searchbar{
+  display: block;
+  margin:0 auto;
+  border: none;
+  height:25px;
+  background-color: #ddd;
+}
+.searchbar:focus{
+   outline: none;
+}
+
+/* Searchbarr */
+
+/* Modal   */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 70px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 7px;
+}
+
+.addnb-form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.addnb-form * {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  margin-left: auto;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Modal */
